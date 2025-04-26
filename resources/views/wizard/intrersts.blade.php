@@ -2,265 +2,169 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Subject of Interest</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: #8B5CF6;
-      font-family: 'Roboto', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .frame {
-      width: 1000px;
-      height: 600px;
-      background-color: #fff;
-      display: flex;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .left-side {
-      width: 30%;
-      background-color: #f9f9f9;
-      padding: 40px 30px;
-    }
-
-    .left-side .logo img {
-      width: 150px;
-      margin-bottom: 20px;
-    }
-
-    .progress-title {
-      font-weight: bold;
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #ff914d;
-    }
-
-    .stepper {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      position: relative;
-    }
-
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 18px;
-      position: relative;
-      color: #999;
-    }
-
-    .step .circle {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background-color: #ddd;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .step:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 20px;
-      left: 7px;
-      width: 2px;
-      height: 30px;
-      background-color: #ccc;
-    }
-
-    .step.completed .circle,
-    .step.active .circle {
-      background-color: #6C3EBF;
-    }
-
-    .step.completed .label,
-    .step.active .label {
-      font-weight: bold;
-      color: #333;
-    }
-
-    .right-side {
-      flex: 1;
-      padding: 40px;
-      position: relative;
-    }
-
-    .step-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 30px;
-      color: #6C3EBF;
-    }
-
-    .categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-    .category-card {
-  width: 160px;
-  height: 200px;
-  background-color: #f5f3ff;
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: #2d2f56;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-  border: 2px solid transparent;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.category-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.category-card.selected {
-  border-color: #6C3EBF;
-}
-
-.category-card img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-  display: block;
-}
-
-.category-card .label {
-  padding: 12px 8px;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-    .buttons {
-      position: absolute;
-      bottom: 30px;
-      left: 40px;
-      right: 40px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .btn {
-      padding: 10px 28px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #F59E0B;
-      background-color: #f2f2f2;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #e6e6e6;
-    }
-
-  </style>
+  <title>Your Learning Interests</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="frame">
-    <!-- Sidebar -->
-    <div class="left-side">
-      <div class="logo">
-        <img src="image-removebg-preview.png" alt="Train Track Logo">
-      </div>
-      <div class="progress-title">Steps Guide</div>
-      <div class="stepper">
-        <div class="step completed">
-          <div class="circle"></div>
-          <div class="label">Let’s Get to Know You</div>
-        </div>
-        <div class="step active">
-          <div class="circle"></div>
-          <div class="label">Subject of Interest</div>
-        </div>
-        <div class="step"><div class="circle"></div><div class="label">Technical Skills</div></div>
-        <div class="step"><div class="circle"></div><div class="label">Non-Technical Skills</div></div>
-        <div class="step"><div class="circle"></div><div class="label">Training Mode</div></div>
-        <div class="step"><div class="circle"></div><div class="label">Advanced Preferences</div></div>
-        <div class="step"><div class="circle"></div><div class="label">Summary</div></div>
-        <div class="step"><div class="circle"></div><div class="label">Results</div></div>
-      </div>
-    </div>
+<body class="h-screen w-screen bg-[#f0f0f0] font-[Roboto]">
 
-    <!-- Content -->
-    <div class="right-side">
-      <div class="step-title">🎯 Subject of Interest</div>
-      <div class="categories">
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="cs.jpg" alt="Computer Science">
-          <div class="label">Computer Science</div>
+
+<div class="w-full h-full flex bg-white">
+ <!-- Left Side (Stepper) -->
+<div class="w-[320px] px-6 py-8 bg-white border-r border-[#e0e0e0]">
+  <!-- App Logo -->
+  <img src="{{ asset('logo.png') }}" style="width: 190px;" class="mt-[-19px] mb-6">
+
+
+  <!-- Stepper Title -->
+  <h3 class="w-[238px] h-[24px] text-[18px] font-normal text-[#333] mb-4 ml-10px">Progress Guide</h3>
+
+
+  <!-- Stepper Container -->
+  <div class="relative pl-4">
+    <!-- Vertical line -->
+    <div class="absolute top-0 bottom-0 left-[32px] w-[1px] bg-gray-300 z-0"></div>
+
+
+    <div class="flex flex-col space-y-3 relative z-10">
+
+
+      <!-- Step 1 (Completed) -->
+      <div class="flex items-center">
+        <div class="w-8 h-8 rounded-full bg-[#6A1B9A] border-[2px] border-[#6A1B9A] flex items-center justify-center text-white font-semibold text-sm mr-3">1</div>
+        <div class="text-[16px] text-[#333] font-medium">Let’s Get to Know You</div>
+      </div>
+
+
+      <!-- Step 2 (In Progress) -->
+      <div class="flex items-start">
+        <div class="relative mr-3">
+          <div class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center font-semibold text-sm text-[#6A1B9A]"
+               style="background: conic-gradient(#6A1B9A 0% 50%, #F5F5F5 50% 100%);">
+            <div class="w-7 h-7 bg-[#F5F5F5] rounded-full flex items-center justify-center">2</div>
+          </div>
         </div>
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="ai.jpg" alt="Data & AI">
-          <div class="label">Data & AI</div>
-        </div>
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="security.jpg" alt="IT Security">
-          <div class="label">IT Security</div>
-        </div>
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="sw eng.jpg" alt="Software Engineering">
-          <div class="label">Software Engineering</div>
-        </div>
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="clouding.jpg" alt="Cloud Technologies">
-          <div class="label">Cloud Technologies</div>
-        </div>
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="business mgm.jpg" alt="Business & Management">
-          <div class="label">Business & Management</div>
-        </div>
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="Communication & UX.jpg" alt="Communication & UX">
-          <div class="label">Communication & UX</div>
-        </div>
-        <div class="category-card" onclick="toggleCard(this)">
-          <img src="Mathematics & Logic.jpg" alt="Mathematics & Logic">
-          <div class="label">Mathematics & Logic</div>
+
+
+        <div class="flex flex-col justify-center">
+          <div class="text-[16px] text-[#333] font-medium">Konwlodge Background</div>
+
+
+          <!-- Substeps -->
+          <div class="mt-3 space-y-2">
+            <div class="flex items-center">
+              <div class="w-[29px] h-[29px] rounded-full border-2 border-[#6A1B9A] text-[#6A1B9A] flex items-center justify-center font-semibold text-[10px]">2.1</div>
+              <div class="ml-2 text-[15px] text-[#333]">Select Interest Categories</div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-[29px] h-[29px] rounded-full border border-gray-300 text-[#757575] flex items-center justify-center text-[10px] font-medium">2.2</div>
+              <div class="ml-2 text-[15px] text-[#333]">Choose Topics</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="buttons">
-        <button class="btn">Back</button>
-        <button class="btn">Next</button>
+
+      <!-- Step 3–6 -->
+      <div class="flex items-center">
+        <div class="w-8 h-8 rounded-full bg-[#F5F5F5] border border-gray-300 flex items-center justify-center text-[#757575] font-medium text-sm mr-3">3</div>
+        <div class="text-[16px] text-[#333] font-medium">Technical Skills</div>
+      </div>
+      <div class="flex items-center">
+        <div class="w-8 h-8 rounded-full bg-[#F5F5F5] border border-gray-300 flex items-center justify-center text-[#757575] font-medium text-sm mr-3">4</div>
+        <div class="text-[16px] text-[#333] font-medium">Non-Technical Skills</div>
+      </div>
+      <div class="flex items-center">
+        <div class="w-8 h-8 rounded-full bg-[#F5F5F5] border border-gray-300 flex items-center justify-center text-[#757575] font-medium text-sm mr-3">5</div>
+        <div class="text-[16px] text-[#333] font-medium">Advance Preferences</div>
+      </div>
+      <div class="flex items-center">
+        <div class="w-8 h-8 rounded-full bg-[#F5F5F5] border border-gray-300 flex items-center justify-center text-[#757575] font-medium text-sm mr-3">6</div>
+        <div class="text-[16px] text-[#333] font-medium">Summary & Results</div>
       </div>
     </div>
   </div>
+</div>
 
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Right Side -->
+  <div x-data="subjectCategoryStep()" x-init="fetchCategories()" class="flex-1 bg-white overflow-y-auto p-6 text-[14px] leading-tight">
+    <h1 class="text-[26px] font-medium mb-2">📚Konwlodge Background</h1>
+    <p class="text-[15px] text-[#333] ml-[40px] mb-6">Select max 3 categories to get personalized subject suggestions.</p>
+ 
+    <!-- Category Cards -->
+    <div class="grid grid-cols-4 gap-x-6 gap-y-8 justify-items-center">
+      <template x-for="category in categories" :key="category.id">
+        <div
+          @click="toggleCategory(category.id)"
+          :class="selectedCategories.includes(category.id) ? 'border-2 border-[#6A1B9A] bg-[#f9f0ff]' : 'border border-gray-300 hover:border-[#6A1B9A]'"
+          class="cursor-pointer flex flex-col items-center justify-center rounded-[20px] p-6 transition-all h-[170px] max-w-[210px] w-full"
+        >
+          <img :src="`/static/categories/${category.id}.png`" alt="icon" class="w-[48px] h-[48px] mb-3">
+          <div class="text-center text-[14px] font-medium text-[#333]" x-text="category.name"></div>
+        </div>
+      </template>
+    </div>
+ 
+    <!-- Navigation Buttons -->
+    <div class="w-full flex justify-between items-center mt-12 px-[20px]">
+      <button class="min-w-[130px] py-2 rounded-[8px] border border-[#6A1B9A] text-[#6A1B9A] text-[15px] font-medium hover:bg-[#f3e5f5] transition-all">
+        Back
+      </button>
+      <button
+        @click="saveAndGoNext()"
+        class="min-w-[130px] py-2 rounded-[8px] bg-[#6A1B9A] text-white text-[15px] font-medium hover:bg-[#5a1584] transition-all disabled:opacity-50"
+        :disabled="selectedCategories.length !== 3">
+        Next
+      </button>
+    </div>
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script>
-    function toggleCard(card) {
-      card.classList.toggle('selected');
+    function subjectCategoryStep() {
+      return {
+        categories: [],
+        selectedCategories: [],
+ 
+        async fetchCategories() {
+          try {
+            const response = await fetch("https://train-track-backend.onrender.com/wizard/subject-categories");
+            const result = await response.json();
+            if (result.success) {
+              this.categories = result.data;
+            }
+          } catch (error) {
+            console.error("Error fetching categories:", error);
+          }
+        },
+ 
+        toggleCategory(id) {
+          if (this.selectedCategories.includes(id)) {
+            this.selectedCategories = this.selectedCategories.filter(c => c !== id);
+          } else if (this.selectedCategories.length < 3) {
+            this.selectedCategories.push(id);
+          }
+        },
+ 
+        saveAndGoNext() {
+  // Save as comma-separated string, not JSON
+  localStorage.setItem('selectedCategoryIds', this.selectedCategories.join(','));
+  window.location.href = '/traintrack/choose-topics';
+}
+
+
+      }
     }
   </script>
-</body>
-</html>
-
+ 
